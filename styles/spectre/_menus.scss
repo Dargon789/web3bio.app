@@ -1,0 +1,83 @@
+// Menus
+.menu {
+  background: $bg-color-light;
+  border-radius: $border-radius;
+  box-shadow:
+      0 .05rem .1rem hsl(0deg 0% 0% / 0.075),
+      0 .1rem .2rem hsl(0deg 0% 0% / 0.075),
+      0 .2rem .8rem hsl(0deg 0% 0% / 0.075),
+      0 .4rem 1.6rem hsl(0deg 0% 0% / 0.075);
+  color: $dark-color;
+  flex-direction: column;
+  font-size: .7rem;
+  gap: $unit-1;
+  list-style: none;
+  margin: 0;
+  min-width: $control-width-xs;
+  padding: $unit-2;
+  transform: translateY(0);
+  z-index: $zindex-3;
+
+  &.menu-nav {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menu-item {
+    margin-top: 0;
+    padding: 0 $unit-4;
+    text-decoration: none;
+    user-select: none;
+
+    & > a {
+      align-items: center;
+      border-radius: $border-radius;
+      color: inherit;
+      display: flex;
+      margin: 0 (-$unit-4);
+      padding: $unit-2;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        background: rgba($color: $dark-color, $alpha: 0.05);
+        color: $primary-color;
+      }
+
+      &:active,
+      &.active {
+        background: rgba($color: $dark-color, $alpha: 0.075);
+        color: $primary-color;
+      }
+    }
+
+    & > div {
+      align-items: center;
+      border-radius: $border-radius;
+      color: inherit;
+      display: flex;
+      margin: 0 (-$unit-4);
+      padding: $unit-2;
+    }
+
+    .icon {
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .form-checkbox,
+    .form-radio,
+    .form-switch {
+      margin: $unit-h 0;
+    }
+  }
+
+  .menu-badge {
+    float: right;
+    padding: $unit-1 0;
+
+    .btn {
+      margin-top: -$unit-h;
+    }
+  }
+}
