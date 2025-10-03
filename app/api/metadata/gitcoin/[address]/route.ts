@@ -53,7 +53,13 @@ function createResponse(score: number, stamps: any[]): StampResponse {
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const address = req.nextUrl.searchParams.get("address");
 
-  if (!address || !isValidEthereumAddress(address)) {
+  // Extra defense: ensure address strictly matches Ethereum address format.
+  const ETH_ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
+  if (
+    !address ||
+    !isValidEthereumAddress(address) ||
+    !ETH_ADDRESS_REGEX.test(address)
+  ) {
     return NextResponse.json(createResponse(0, []));
   }
 
