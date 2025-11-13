@@ -20,7 +20,7 @@
     "emoji-blast": "^0.10.1",
     "grapheme-splitter": "^1.0.4",
     "next": "^14.2.32",
-    "react-hot-toast": "^2.4.1",
+    "react-hot-toast": "^2.6.0",
     "react-infinite-scroll-hook": "^4.1.1",
     "react-markdown": "^9.0.0",
     "rehype-raw": "^7.0.0",
